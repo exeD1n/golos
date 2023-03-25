@@ -12,9 +12,9 @@ class All(models.Model):
     fullName = models.CharField('ФИО', max_length=250)
     mail = models.EmailField('Почта обучаемого', max_length=250)
     formOfStudy = models.CharField('Форма обучения',max_length=1, choices=FORM_OF_Study)
-    group = models.ForeignKey('Group', on_delete=models.PROTECT, null=True)
-    courseOfStudy = models.ForeignKey('CourseOfStudy', on_delete=models.PROTECT, null=True)
-    hilary_id = models.ForeignKey('Hilary', on_delete=models.PROTECT, null=True)
+    group = models.ForeignKey('Group', on_delete=models.PROTECT, null=True, verbose_name = 'Группа')
+    courseOfStudy = models.ForeignKey('CourseOfStudy', on_delete=models.PROTECT, null=True, verbose_name = 'Номер курса')
+    hilary_id = models.ForeignKey('Hilary', on_delete=models.PROTECT, null=True, verbose_name = 'Сдаваемая сессия')
     
     def __str__(self):
         return self.fullName
