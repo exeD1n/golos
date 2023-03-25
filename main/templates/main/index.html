@@ -4,13 +4,18 @@
 
 {% block content %}
     <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-                Ифнормация об учителе
-            </div>
-            <div class="col">
-                Колонка
-            </div>
+        <div class="container-sm">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.fullName }}
+                    {{ form.mail }}
+                    {{ form.formOfStudy }}
+                    {{ form.group }}
+                    {{ form.courseOfStudy }}
+                    {{ form.hilary_id }}
+                    <span>{{ error }}</span>
+                    <button type="submit" class="btn btn-success">Отправить информацию</button>
+                </form>
         </div>
     </div>
 {% endblock content %}
