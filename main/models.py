@@ -15,6 +15,7 @@ class All(models.Model):
     group = models.ForeignKey('Group', on_delete=models.PROTECT, null=True, verbose_name = 'Группа')
     courseOfStudy = models.ForeignKey('CourseOfStudy', on_delete=models.PROTECT, null=True, verbose_name = 'Номер курса')
     hilary_id = models.ForeignKey('Hilary', on_delete=models.PROTECT, null=True, verbose_name = 'Сдаваемая сессия')
+    item = models.ForeignKey('Item', on_delete=models.PROTECT, null=True, verbose_name = 'Необходимый предмет')
     
     def __str__(self):
         return self.fullName
@@ -56,3 +57,13 @@ class Hilary(models.Model):
     class Meta:
         verbose_name = 'Название сессии'
         verbose_name_plural = 'Названия сессий'
+        
+class Item(models.Model):
+    name = models.CharField('Название предмета', max_length=250)
+    
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        verbose_name = 'Название предмета'
+        verbose_name_plural = 'Названия предметов'

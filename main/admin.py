@@ -1,12 +1,12 @@
 from django.contrib import admin
-from .models import All, Group, CourseOfStudy, Hilary
+from .models import All, Group, CourseOfStudy, Hilary, Item
 
 
 # Register your models here.
 @admin.register(All)
 class AllAdmin(admin.ModelAdmin):
-    list_display = ('id', 'fullName', 'mail', 'formOfStudy', 'group', 'courseOfStudy', 'hilary_id')
-    list_filter = ('fullName', 'formOfStudy', 'group', 'courseOfStudy', 'hilary_id')
+    list_display = ('id', 'fullName', 'mail', 'formOfStudy', 'group', 'courseOfStudy', 'hilary_id', 'item')
+    list_filter = ('fullName', 'formOfStudy', 'group', 'courseOfStudy', 'hilary_id', 'item')
 
 @admin.register(Group)
 class GroupAdmin(admin.ModelAdmin):
@@ -15,3 +15,4 @@ class GroupAdmin(admin.ModelAdmin):
 
 admin.site.register(CourseOfStudy)
 admin.site.register(Hilary)
+admin.site.register(Item)

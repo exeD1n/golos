@@ -6,7 +6,7 @@ class AllForm(forms.ModelForm):
     
     class Meta:
         model = All
-        fields = ('fullName', 'mail', 'formOfStudy', 'group', 'courseOfStudy', 'hilary_id')
+        fields = ('fullName', 'mail', 'formOfStudy', 'group', 'courseOfStudy', 'hilary_id', 'item')
         
         widgets = {
             'fullName': TextInput(attrs={
@@ -34,6 +34,9 @@ class AllForm(forms.ModelForm):
             'hilary_id' : Select(attrs={
                 'class' : 'form-control mb-3',
             }),
+            'item' : Select(attrs={
+                'class' : 'form-control mb-3',
+            })
         }
 
         

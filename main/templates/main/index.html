@@ -4,15 +4,23 @@
 
 {% block content %}
     <div class="container-fluid">
-        <div class="container-sm">
+        <div class="container-sm mt-5">
                 <form method="post">
                     {% csrf_token %}
+                    <label for="exampleFormControlInput1" class="form-label">Напишите ФИО</label>
                     {{ form.fullName }}
+                    <label for="exampleFormControlInput1" class="form-label">Напишите вашу почту</label>
                     {{ form.mail }}
+                    <label for="exampleFormControlInput1" class="form-label">Выберете форму обучения</label>
                     {{ form.formOfStudy }}
+                    <label for="exampleFormControlInput1" class="form-label">Выберете вашу группу</label>
                     {{ form.group }}
+                    <label for="exampleFormControlInput1" class="form-label">Выберете ваш курс</label>
                     {{ form.courseOfStudy }}
+                    <label for="exampleFormControlInput1" class="form-label">Выберете сдаваемую сессию</label>
                     {{ form.hilary_id }}
+                    <label for="exampleFormControlInput1" class="form-label">Выберете предмет</label>
+                    {{ form.item }}
                     <span>{{ error }}</span>
                     <button type="submit" class="btn btn-success">Отправить информацию</button>
                 </form>
